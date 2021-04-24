@@ -22,7 +22,7 @@ router.get('/custom-meal-planner', function(req, res, next) {
     await page.goto('https://www.allrecipes.com/recipe/22831/alfredo-sauce/');
     console.log("page", page);  
     console.log(page.window.document.querySelector(".ingredients-section").textContent);
-  }();
+  })();
   res.render('meal-plan', { 
     title: 'Meal-Plan Page'
   });
