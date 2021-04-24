@@ -11,14 +11,18 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/custom-meal-planner', function(req, res, next) {
-  const browser = await puppeteer.launch({
-    headless: false,
+  (async () => {
+    const response = await fetch('https://www.allrecipes.com/recipe/22831/alfredo-sauce/');
+    const text = await response.text();
+    const dom = await new JSDOM(text);
+    const ingredientsSection = dom.window.document.querySelector(".ingredients-section").textContent
+    console.log(dom.window.document.querySelector(".ingredients-section").textContent);
+    res.render('meal-plan', { 
+      title: 'Meal-Plan Page',
+      ingredientsSection: ingredientsSection
   });
-  const page = await browser.newPage();
-  await page.setRequestInterception(true);
-  await page.goto('http://www.example.com/');
-  console.log('page?', page);
-  res.render('meal-plan', { title: 'Meal-Plan Page'});
+
+  })()
 });
 
 module.exports = router;
