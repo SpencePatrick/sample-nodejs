@@ -568,7 +568,7 @@ function randomLink(seed, hostname) {
   var link = [];
   link['href'] = '/' + randomSentence(seed).replace(/ /g, '/').replace(/,/g, '');
   var linkSeed = generateSeed(hostname + link['href']);
-  link['title'] = randomTitle(linkSeed);
+  link['title'] = "Spences overwritten title";
   return link;
 }
 
