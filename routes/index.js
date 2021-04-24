@@ -20,11 +20,12 @@ router.get('/custom-meal-planner', function(req, res, next) {
     const dom = await new JSDOM(text);
     const ingredientsSection = dom.window.document.querySelector(".ingredients-section").textContent
     console.log(dom.window.document.querySelector(".ingredients-section").textContent);
-    res.render('meal-plan', { 
-      title: 'Meal-Plan Page'
-    })()
+    console.log('document', document);
+    document.querySelector("#ingredient-section").appendChild(ingredientsSection);
   });
-  
+  res.render('meal-plan', { 
+    title: 'Meal-Plan Page'
+  })()
 });
 
 module.exports = router;
