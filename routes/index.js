@@ -16,7 +16,7 @@ router.get('/custom-meal-planner', function(req, res, next) {
   });
   const page = await browser.newPage();
   await page.setRequestInterception(true);
-  await page.goto('http://www.example.com/');
+  await page.goto('https://www.allrecipes.com/recipe/22831/alfredo-sauce/');
   console.log("page", page);  
   res.render('meal-plan', { 
     title: 'Meal-Plan Page'
