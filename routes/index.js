@@ -15,7 +15,6 @@ router.get('/custom-meal-planner', function(req, res, next) {
   (async () => {
     try {
       const fetch = require("node-fetch");
-
       console.log("starting to fetch");
       const response = await fetch('https://www.allrecipes.com/recipe/22831/alfredo-sauce/');
       console.lot("response", response);
@@ -33,7 +32,7 @@ router.get('/custom-meal-planner', function(req, res, next) {
   });
   res.render('meal-plan', { 
     title: 'Meal-Plan Page'
-  })()
+  });
 });
 
 module.exports = router;
