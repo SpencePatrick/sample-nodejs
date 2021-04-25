@@ -1,7 +1,6 @@
 
 var express = require('express');
 var router = express.Router();
-var phantom = require('phantom');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -13,6 +12,8 @@ router.get('/custom-meal-planner', function(req, res, next) {
   console.log('going in');
   (async () => {
     try {
+      var phantom = require('phantom');
+
       console.log('in line flin');
       phantom.create(function (ph) {
         ph.createPage(function (page) {
