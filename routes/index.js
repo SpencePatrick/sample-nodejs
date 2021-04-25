@@ -12,9 +12,9 @@ router.get('/custom-meal-planner', function(req, res, next) {
   console.log('going in');
   (async () => {
     try {
-      var phantom = require('../phantom');
+      var phantom = require('phantom');
 
-      console.log('in line flin');
+      console.log('in line flin', phantom);
       phantom.create(function (ph) {
         ph.createPage(function (page) {
           var url = "http://www.bdtong.co.kr/index.php?c_category=C02";
