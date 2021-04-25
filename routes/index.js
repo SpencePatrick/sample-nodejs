@@ -1,6 +1,7 @@
 
 var express = require('express');
 var router = express.Router();
+var phantom = require('phantom');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
