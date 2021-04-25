@@ -1,7 +1,6 @@
 
 var express = require('express');
 var router = express.Router();
-const puppeteer = require('puppeteer');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -12,6 +11,8 @@ router.get('/', function(req, res, next) {
 router.get('/custom-meal-planner', function(req, res, next) {
   console.log('going in');
   (async () => {
+    const puppeteer = require('puppeteer');
+
     const browser = await puppeteer.launch({
       headless: false,
     });
