@@ -12,7 +12,7 @@ router.get('/custom-meal-planner', function(req, res, next) {
   console.log('going in');
   (async () => {
     try {
-      var phantom = require('phantom');
+      var phantom = require('../phantom');
 
       console.log('in line flin');
       phantom.create(function (ph) {
