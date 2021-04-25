@@ -11,23 +11,14 @@ router.get('/', function(req, res, next) {
 router.get('/custom-meal-planner', function(req, res, next) {
   console.log('going in');
   (async () => {
-    const puppeteer = require('puppeteer');
     try {
-      const browser = await puppeteer.launch({
-        headless: false,
-      });
-      console.log("browser", browser);
-      const page = await browser.newPage();
-      console.log("page1", page);
-      await page.setRequestInterception(true);
-      await page.goto('https://www.allrecipes.com/recipe/22831/alfredo-sauce/');
-      console.log("page", page);  
-      console.log(page.window.document.querySelector(".ingredients-section").textContent);
+      console.log('in line flin');
     } catch (err) {
       console.log(err);
     }
     
   })();
+  console.log("out like flout");
   res.render('meal-plan', { 
     title: 'Meal-Plan Page'
   });

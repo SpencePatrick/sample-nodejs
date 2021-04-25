@@ -20,6 +20,5 @@
     "uglify-js": "^2.6.0",
     "jsdom": "^16.5.3",
     "node-fetch": "^2.6.1",
-    "puppeteer": "^9.0.0"
   }
 }
